@@ -22,7 +22,3 @@
 - Now, lets say you met your friend today, had a long chat till the evening, and he left afterwards, and on the next day you saw your friend in the market from a distance and that too his side face, but still you recognized him, right?, your eyes did not collected enough information about him, and yet you recognized him.This is because your brain has the ability to fill in the missing information and reconstruct the complete image of your friend based on partial cues.
 
 - This phenomenon is known as **"pattern completion"** or **"associative memory,"** and it's one of the key inspirations behind Hopfield networks. Your brain stores patterns (in this case, the memory of your friend) and can recall the entire pattern even when presented with incomplete or noisy input.
-
-## Motive
-
-- All modelling is based on details, in many physical systems, the emergent collective properties is insensitive to the details inserted in it, even though the details of the neural structure of our brain are myriad, we are still able to mimic its behaviour upto some extent though artificial intelligence.
