@@ -49,3 +49,19 @@ void Hopfield::learn(std::vector<std::vector<float>>&patterns){
     }
 }
    
+void Hopfield::weightedSum(std::vector<bool>inputPattern,std::vector<std::vector<float>>&patterns){
+    /* 
+    ∑ⱼ Tᵢⱼ Vⱼₛ' = ∑ₛ (2Vᵢₛ - 1)[∑ⱼ Vⱼₛ'(2Vⱼₛ - 1)] ≡ Hᵢₛ'
+     */
+    for (int i = 0;i<numNeuron;i++){
+        float sum = 0.0f;
+        for (const auto& pattern: patterns){
+            float innerSum = 0.0f;
+            for(int j = 0;j<numNeuron;j++){
+                innerSum +=(2*pattern[i]-1) * inputPattern[j];
+            }
+            sum += (2*pattern[i]-1)*innerSum;
+        }
+        weightedSumVec[i] = sum;
+    }
+}

@@ -30,6 +30,7 @@ namespace HopfieldNetwork{
             std::vector<bool>networkState;
             std::vector<float>neuronThreshold;
             std::vector<std::vector<float>>weightMat;
+            std::vector<int>weightedSumVec;
         
         public:
             Hopfield(int numNeuron) : 
@@ -42,6 +43,7 @@ namespace HopfieldNetwork{
             void learn(std::vector<std::vector<float>>&patterns);
             void updateNeuronState(int neuron);
             void updateFunc();
+            void weightedSum(std::vector<bool>inputPattern,std::vector<std::vector<float>>&patterns);
             void storedata();
 
     };
