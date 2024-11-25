@@ -65,3 +65,14 @@ void Hopfield::weightedSum(std::vector<bool>inputPattern,std::vector<std::vector
         weightedSumVec[i] = sum;
     }
 }
+
+void Hopfield::energyFunction(){
+    
+    for(int i = 0;i<numNeuron;i++){
+        for(int j =0; j<numNeuron;j++)
+            if (i!= j)
+                energy += (weightMat[i][j] * networkState[i] * networkState[j]);
+    }
+
+    energy = -0.5*energy;
+}

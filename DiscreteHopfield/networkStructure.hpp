@@ -31,12 +31,12 @@ namespace HopfieldNetwork{
             std::vector<float>neuronThreshold;
             std::vector<std::vector<float>>weightMat;
             std::vector<int>weightedSumVec;
-        
+            double energy;
         public:
             Hopfield(int numNeuron) : 
                 networkState(numNeuron, false),numNeuron(numNeuron), 
                 neuronThreshold(numNeuron, 0.0f), 
-                weightMat(numNeuron, std::vector<float>(numNeuron, 0.0f)){
+                weightMat(numNeuron, std::vector<float>(numNeuron, 0.0f)),energy(0.0){
 
             }
 
@@ -45,6 +45,7 @@ namespace HopfieldNetwork{
             void updateFunc();
             void weightedSum(std::vector<bool>inputPattern,std::vector<std::vector<float>>&patterns);
             void storedata();
+            void energyFunction();
 
     };
 }
